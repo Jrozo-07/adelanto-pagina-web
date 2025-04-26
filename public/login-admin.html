@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Registro</title>
+<link rel="stylesheet" href="./estructure/css/styles2.css">
+<div class="form-container" id="login-container">
+  <div class="user-icon-container">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAZxJREFUSEu11L1vjWEYx/HPSecmmgpCajHUaOofIF5K01EbU/8CidCkpoYNIQzduyojUukLo9UmBgtB21RIGQnPldxtTh7nPveTU+da7/v6fa/3lj5bq8/6mgImq0Bu4kQK6D3m8bwUYBPAHG5nhGZxvxukBDiPF9hAgFaS2DncwRGcwXoOUgKsJoFpPK6JTGEJy7jYK+AbDlRlGMTPmsgwtvEZx3oFbOIQDuJrBhB/olQdrVSiqPlZRDmeZEoUPbrQK6C9yTEx0ZOBBL2Lw/ttcgR2DSEWwu32u+pLQB/uZ0x3fUdxHTGev/Ayzf+7/7FoJY2u792aHOMZUY/hVJqmdrEtvMHrlM2PTqQcIKZiMTWxSQaxCzNYq3/uBJjAs/TxKW4hjtv3mnNkGMcv3sMnLAKLsd2zOmAIb1PkcWtuNAkf91I5v+BkNXk7u351wFU8wCucbige30InljIO35Vq8xdygDhol0rLkwGPp8P3CJdzgA8YQZSqXvNSQkfxCR9xPAf4kx5KNyoH+8e/V6FSNtkpauzY9GPfM/gL5dBHGcZ57nQAAAAASUVORK5CYII="/>
+  </div>
+  <form id="loginForm">
+      <div class="input-group">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASZJREFUSEvt1cErBHEUwPHP3jlQSspNKf4JRzlLDlKKIgfl7LjlphxEUUoOkrMc/ROUs5JSHLizTzOaxuzOrmkum3f8zXvv+953pt801ByNmvvrL8A8mpisqO0BO7iKPllFd5iq2Dwtv8d0HvCZPD3Exh9B2drv4bMbpIA4m8UpRrsEPWMFN8j2KQQM4gNDLcARFkogl1jHGwbwnuS33eARy7hNEhdxgOEc6BWbuEjOZ3CG8TJA2ucE28lEoSqUhbqIUBFKQk1svIfV3ABtN8jmPWEN18lhqIgIdRFzOMZYgcauAGndecvxFkJLROjax1KH99MTIPq8ZDSEvpGSl98zoMsv9iftH1Bq7Jei2i+7uK53MVE6W+eEttd1xb7F5f31y6xF0RedUDYZkAb/FgAAAABJRU5ErkJggg=="/>
+          <input type="email" class="input-field" id="login-email" placeholder="Email" required>
+      </div>
+      <div class="input-group">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAR9JREFUSEvF1b8uBUEUx/HP9QqiUPqTSKi8AgUPIB5AJ1SioyBuolCoeAYSoia8go5EQqIShXgDwSSzibu5u7O79uZONdkz+/ue85szMx0DHp0B66sKWME6FmJCdzjBVSrBKoAjbBcI7WG/DJICrOI8ChzgNM43sRPnS7gpgqQA95jHFo5zIgHQxTWWmwK+MPLr9xg+ciLjeMMnRpsCvuOPRZWm4skuSgmk4sMBhJ4PmzeT6vFc/Am7uPj7vZ+3D5itKZ4tf8RcCpD52pDRa3u/CoYGOMNGLCtcH2sFJfYkXaeCCbxG0Sk8tw0IJ/c9ik7ipW3AJUILh3GLxbYBQS+ztKwRGu9Ba4CBH7Tg8yGma560yldFTd3y5akX7d+wH5leMxkPQZ+dAAAAAElFTkSuQmCC"/>
+          <input type="password" class="input-field" id="login-password" placeholder="Contraseña" required>
+      </div>
+      <div class="remember-forgot">
+          <div class="remember-me">
+              <input type="checkbox" id="remember">
+              <label for="remember">Recordarme</label>
+          </div>
+          <div class="forgot-password">
+              <a href="#">¿Olvidó su contraseña?</a>
+          </div>
+      </div>
+      <button type="submit" class="login-button">INGRESAR</button>
+      <div class="error" id="login-error"></div>
+      <div class="register-link">
+          <p>¿No tienes cuenta? <a href="#" onclick="showRegister()">Regístrate</a></p>
+      </div>
+  </form>
+</div>
+
+<div class="form-container hidden" id="register-container">
+  <div class="user-icon-container">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAZxJREFUSEu11L1vjWEYx/HPSecmmgpCajHUaOofIF5K01EbU/8CidCkpoYNIQzduyojUukLo9UmBgtB21RIGQnPldxtTh7nPveTU+da7/v6fa/3lj5bq8/6mgImq0Bu4kQK6D3m8bwUYBPAHG5nhGZxvxukBDiPF9hAgFaS2DncwRGcwXoOUgKsJoFpPK6JTGEJy7jYK+AbDlRlGMTPmsgwtvEZx3oFbOIQDuJrBhB/olQdrVSiqPlZRDmeZEoUPbrQK6C9yTEx0ZOBBL2Lw/ttcgR2DSEWwu32u+pLQB/uZ0x3fUdxHTGev/Ayzf+7/7FoJY2u792aHOMZUY/hVJqmdrEtvMHrlM2PTqQcIKZiMTWxSQaxCzNYq3/uBJjAs/TxKW4hjtv3mnNkGMcv3sMnLAKLsd2zOmAIb1PkcWtuNAkf91I5v+BkNXk7u351wFU8wCucbige30InljIO35Vq8xdygDhol0rLkwGPp8P3CJdzgA8YQZSqXvNSQkfxCR9xPAf4kx5KNyoH+8e/V6FSNtkpauzY9GPfM/gL5dBHGcZ57nQAAAAASUVORK5CYII="/>
+  </div>
+  <form id="registerForm">
+      <div class="input-group">
+          <input type="text" class="input-field" id="register-name" placeholder="Nombre completo" required>
+      </div>
+      <div class="input-group">
+          <input type="tel" class="input-field" id="register-phone" placeholder="Teléfono" required>
+      </div>
+      <div class="input-group">
+          <input type="email" class="input-field" id="register-email" placeholder="Email" required>
+      </div>
+      <div class="input-group">
+          <input type="password" class="input-field" id="register-password" placeholder="Contraseña" required>
+      </div>
+      <button type="submit" class="login-button">REGISTRARSE</button>
+      <div class="error" id="register-error"></div>
+      <div class="register-link">
+          <p>¿Ya tienes cuenta? <a href="#" onclick="showLogin()">Inicia sesión</a></p>
+      </div>
+  </form>
+</div>
+</head>
+<script src="./estructure/js/script2.js" ></script>
+</html>

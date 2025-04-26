@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Consultorio Jurídico</title>
+    <link rel="stylesheet" href="./public/css/styles-landing-page.css">
+ </head>
+    <body>
+            <div class="dashboard-container">
+                
+            </div>
+        
+            
+            <div class="modal" id="citaModal">
+                <div class="modal-content">
+                    <h3>Solicitar Nueva Cita</h3>
+                    <form id="citaForm">
+                        <div class="input-group">
+                            <select class="input-field" required>
+                                <option value="">Seleccione servicio...</option>
+                                <option>Consulta Legal</option>
+                                <option>Divorcio</option>
+                                <option>Contratos</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <input type="tel" class="input-field" placeholder="Número de Cedula" required>
+                        </div>
+                        <button type="submit" class="login-button">Solicitar Cita</button>
+                    </form>
+                </div>
+            </div>
+        
+        <div class="dashboard-container">
+          
+            <section class="welcome-section">
+                <h1>Bienvenido</h1>
+                <p>Último acceso: [Fecha/Hora]</p>
+            </section>
+        
+            
+            <div class="quick-access-grid">
+                <div class="quick-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Nueva Cita</h3>
+                    <p>Agenda una consulta con tu abogado</p>
+                </div>
+                
+                <div class="quick-card">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Mis Documentos</h3>
+                    <p>Accede a tus archivos legales</p>
+                </div>
+                
+                <div class="quick-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Mensajes</h3>
+                    <p>Tienes 3 mensajes nuevos</p>
+                </div>
+            </div>
+        
+            
+         
+        </div>
+    </body>
+    <script src="./public/js/script-landing-page.js"></script>
+</html>
