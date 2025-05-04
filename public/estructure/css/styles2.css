@@ -54,11 +54,14 @@ body {
   margin-bottom: 15px;
   width: 100%;
   box-sizing: border-box;
-  background-color: var(--light-gray);
+  background-color:#666;
+  color: #fff;
+
+ 
 }
 
 .input-icon {
-  color: var(--dark-gray);
+  color: white;
   margin-right: 10px;
 }
 
@@ -67,10 +70,13 @@ body {
   outline: none;
   flex-grow: 1;
   font-size: 1em;
-  color: var(--dark-gray);
+  color: white;
   background-color: transparent;
 }
 
+.input-field::placeholder{
+  color: white;
+}
 .remember-forgot {
   display: flex;
   justify-content: space-between;
@@ -91,7 +97,7 @@ body {
 
 .remember-me label,
 .forgot-password a {
-  color: #666;
+  color: white;
   font-size: 0.9em;
 }
 

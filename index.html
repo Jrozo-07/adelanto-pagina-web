@@ -1,24 +1,37 @@
 <!DOCTYPE html>
-<html lang="es"> 
+<html lang="es">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Despacho R.G - Oficina Jurídica</title> 
+        <title>Despacho R.G - Oficina Jurídica</title>
         <meta name="description" content="Oficina Jurídica Rodrigo Gutiérrez - Tu Consultorio de confianza para realizar tus tramites juridicos">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./public/estructure/css/styles.css"> 
+        <link rel="stylesheet" href="./public/estructure/css/styles.css">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,500;700&family=Kanit:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"> 
-    <body class="page-home"> 
+        <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,500;700&family=Kanit:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> </head>
+    <body class="page-home">
+        <div id="chat-icon">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAARRJREFUSEvFlTEKwjAUhr/iEURxcFMQ9AKOLoIH8A4uHkF0EXRWvIUXEARHT6AggpMggngCURtIa4kxbdMWM6W85P/e+5O+OGQ8nIz1iQMoA0uZUBc4R0kuDqAPzKWomC/SBlSBoxStAKe0AULvJUUjV64uFN6OgVqU7DRrDsAgcFZfh7wD6pbi3rY90PA+1Ao8CxIyPon/HSCu5RQYAj2lLFPMTzxYwRZoKiJ54A6UXMAlRmwFdMT6IEDnfwG4AUXgqgBMMV87DDCTFo00FpliWsAGaCW9PnL/GmirFgX/1KQc7SH/Apjagog9NdmkBsi5reGRFGBjV6wKUgVk3uxEu54A4nGxGaHt2kbUuCfyy2RLfgNEgDEZNxhivgAAAABJRU5ErkJggg=="/>
+        </div>
+        <div id="chat-window">
+            <div id="chat-messages">
+                </div>
+            <div id="chat-input">
+                <button data-topic="documento-privado">Documento Privado</button>
+                <button data-topic="traspaso-bienes">Traspaso de Bienes</button>
+                <button data-topic="divorcio">Divorcio</button>
+            </div>
+        </div>
         <div class="container">
             <nav>
                 <p class="logo">Despacho R.G</p>
-                <ul>
-                    <li class="dropdown"> 
-                        <a href="#" class="dropbtn">Inicio &#9662;</a> 
-                        <div class="dropdown-content"> 
-                            <a href="">Cliente</a> 
-                            <a href="./public/login-admin.html">Admin</a>   
+                <button class="hamburger-icon" aria-label="Toggle navigation">
+                    &#9776; </button>
+                <ul class="nav-menu"> <li class="dropdown">
+                        <a href="#" class="dropbtn">Inicio &#9662;</a>
+                        <div class="dropdown-content">
+                        <a href="./public/login-admin.html">Admin</a>
                         </div>
                     </li>
                     <li>
@@ -27,6 +40,9 @@
                     <li>
                         <a href="./public/contacto.html">Contacto</a>
                     </li>
+                    <li>
+                        <a href="./public/servicios.html"> Servicios</a>
+                    </li>
                 </ul>
             </nav>
 
@@ -34,17 +50,57 @@
                 <h1>Bienvenidos</h1>
                 <h2>Oficina Jurídica Rodrigo Gutiérrez</h2>
                 <p>Tu Consultorio de confianza para realizar tus trámites jurídicos.</p>
-        
-                <button onclick="window.location.href='./public/animacion-de-carga.html';">Mas Informacion</button>
-                
-            
-                
+
+                <button onclick="window.location.href='./public/mas-informacion.html';">Mas Informacion</button>
             </header>
-        </div> 
+        </div>
         <footer>
             <p>&copy; 2025 Despacho R.G. Todos los derechos reservados.</p>
-
         </footer>
+
+        <script src="./public/estructure/js/script1.js"></script>
+        <script>
+
+            
+            const hamburgerButton = document.querySelector('.hamburger-icon');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburgerButton.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                   
+                     if (navMenu.classList.contains('active')) {
+                         setTimeout(() => {
+                              navMenu.classList.remove('active');
+                         }, 100);
+                     }
+                });
+            });
+
+             document.addEventListener('click', (event) => {
+                 const dropdowns = document.querySelectorAll('.dropdown');
+                 dropdowns.forEach(dropdown => {
+                    if (!dropdown.contains(event.target)) {
+                        dropdown.querySelector('.dropdown-content').style.display = 'none';
+                    }
+                 });
+            });
+            document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
+                dropdownToggle.addEventListener('click', (event) => {
+                    if (navMenu.classList.contains('active')) {
+                        event.preventDefault(); 
+                        const dropdownContent = dropdownToggle.nextElementSibling;
+                        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+                    }
+                    
+                });
+            });
+
+
+        </script>
 
     </body>
 </html>

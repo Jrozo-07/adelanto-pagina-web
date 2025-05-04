@@ -1,6 +1,3 @@
-setTimeout(function() {
-    window.location.href= 'mas-informacion.html';
-},  3000);
-
-
-
+setTimeout(function(){
+    window.location.href='';   
+}, 500);
